@@ -1,0 +1,17 @@
+<mat-card appearance="outlined">
+  <div class="container">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="form">
+      <mat-form-field appearance="fill">
+        <mat-label>Usuario</mat-label>
+        <input matInput formControlName="username" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Contraseña</mat-label>
+        <input matInput type="password" formControlName="password" />
+      </mat-form-field>
+
+      <button mat-flat-button color="primary" type="submit">Registrar</button>
+    </form>
+  </div>
+</mat-card>

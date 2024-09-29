@@ -1,0 +1,32 @@
+<div class="container">
+  <mat-form-field appearance="fill">
+    <mat-label>Seleccione una raza</mat-label>
+    <mat-select (selectionChange)="onSelectBreed($event.value)">
+      <mat-option *ngFor="let breed of breeds" [value]="breed.id">
+        {{ breed.name }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-card appearance="outlined">
+    <div class="container" *ngIf="breedImages.length > 0" >
+      <div *ngIf="selectedBreed">
+        <h2>{{ selectedBreed.name }}</h2>
+        <p>{{ selectedBreed.description }}</p>
+      </div>
+      <div class="carousel">
+        <div class="container">
+          <ol class="carousel-indicators">
+            <li  *ngFor="let image of breedImages" data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          </ol>
+          <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" *ngFor="let image of breedImages">
+                <img class="d-block w-100" [src]="image.url" >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-card>
+</div>

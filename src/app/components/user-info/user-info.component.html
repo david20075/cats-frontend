@@ -1,0 +1,11 @@
+<mat-card appearance="outlined">
+  <div class="container">
+    <div *ngIf="user">
+      <h1><b>Vista Restringida </b></h1>
+      <h2>Bienvenido, {{ user.username }}</h2>
+      <p><b>Información del usuario:</b></p>
+      <p>Id: {{ user._id }}</p>
+      <p>UserName: {{ user.username }}</p>
+    </div>
+  </div>
+</mat-card>
